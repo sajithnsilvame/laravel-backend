@@ -9,15 +9,13 @@ use Stripe\Exception\CardException;
 
 class PaymentController extends Controller
 {
-    public function make_payment(Request $request)
-    {
-
-
+    public function make_payment(Request $request){
+        
+        
         $amount = $request->input('amount');
-        //$stripeAPIKey = env('STRIPE_SECRET');
-        $order_info = $request->input('order_info');
+        $apiKey = env('STRIPE_SECRET');
 
-        Stripe::setApiKey('sk_test_51NHMI3IcPN2M0dwToDFb1YiDlmRM4Z7FWF0bcYxabm8HDLv1Xk2xVsuLlxnzH81LhqGE0HuWOwRgkS3Pi2Tpb3my00CeMOtZ6H');
+        Stripe::setApiKey($apiKey);
 
         $intent = \Stripe\PaymentIntent::create([
             'amount' => $amount * 100,
@@ -27,18 +25,8 @@ class PaymentController extends Controller
             'description' => 'Payment from customer',
         ]);
 
-
-        // order data save logic
-
-
-
-
-
-        // =>
-
         return response()->json([
             'client_secret' => $intent->client_secret,
-            'order_info' => $order_info,
         ]);
     }
 }
