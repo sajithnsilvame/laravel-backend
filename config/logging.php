@@ -54,7 +54,7 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['single'],
+            'channels' => ['single', 'slack'],
             'ignore_exceptions' => false,
         ],
 
@@ -73,21 +73,21 @@ return [
             'replace_placeholders' => true,
         ],
 
-        // 'slack' => [
-        //     'driver' => 'slack',
-        //     'url' => env('LOG_SLACK_WEBHOOK_URL'),
-        //     'username' => 'Laravel Log',
-        //     'emoji' => ':boom:',
-        //     'level' => env('LOG_LEVEL', 'critical'),
-        //     'replace_placeholders' => true,
-        // ],
         'slack' => [
             'driver' => 'slack',
             'url' => env('LOG_SLACK_WEBHOOK_URL'),
-            'username' => 'Oh See Snaps',
+            'username' => 'Laravel Log',
             'emoji' => ':boom:',
-            'level' => 'error'
+            'level' => env('LOG_LEVEL', 'critical')
         ],
+
+        // 'slack' => [
+        //     'driver' => 'slack',
+        //     'url' => env('LOG_SLACK_WEBHOOK_URL'),
+        //     'username' => 'Oh See Snaps',
+        //     'emoji' => ':boom:',
+        //     'level' => 'error'
+        // ],
 
         'papertrail' => [
             'driver' => 'monolog',
