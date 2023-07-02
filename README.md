@@ -21,23 +21,12 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## What are the things I have learned from 
-    How to write a Rest API
+## What are the things I have learned from this project 
+- How to write a Rest API
+- How to generate client secret for Stripe
+
     
-
-
 ### Packges I have used
 
-- **Sanctum**
-- **[Tighten Co.](https://tighten.co)**
-
-
-
-
-
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# laravel-ecommerce-backend
-# laravel-backend
+- **[Sanctum](https://laravel.com/docs/10.x/sanctum)**        
+- **[Laravel Cashier(Stripe)](https://laravel.com/docs/10.x/billing)**
